@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet">
+    <script src="https://kit.fontawesome.com/a79a49433d.js" crossorigin="anonymous"></script>
+    <script src="./TimeDate.js"></script>
+    <script src="./Weather.js"></script>
+    <script type="module" src="./appsScreen.js"></script>
+    <script type="module" src="./BrightnessSlider.js"></script>
+    <script type="module" src="./statusShow.js"></script>
+    <title>My Phone</title>
+</head>
+<body>
+    
+    <main>
+        <div class="phone_body">
+            <div class="btn volume_btn"></div>
+            <div class="btn power_btn"></div>
+            <div class="camera"></div>
+            <div class="nav">
+                <div class="left">
+                    <div class="time">10:28</div>
+                    <div class="date"></div>
+                </div>
+                <div class="right">
+                    <img class="wifi" src="./images/wifi.png"/>
+                <img class="sim" src="./images/sim.png"/>
+                <div class="battery">76%</div>
+                </div>
+            </div>
+            <div class="screen">
+                <div class="status_bar">
+                    <div class="top-part">
+                        <div class="buttons">
+                            <button>
+                                <i class="material-icons">wifi</i>
+                                <p class="text">Shellyparavur</p>
+                            </button>
+                            <button>
+                                <i class="material-icons">language</i>
+                                <p class="text">Mobile data</p>
+                            </button>
+                            <button>
+                                <i class="material-icons">bluetooth</i>
+                                <p class="text">Bluetooth</p>
+                            </button>
+                            <button>
+                                <i class="material-icons">flight</i>
+                                <p class="text">Aeroplane mode</p>
+                            </button>
+                        </div>
+                        <div class="brightness-control">
+                            <input type="range" name="slider" class="slider" min="0" max="100">
+                            <div class="autob"><i class="material-icons">brightness_5</i></div>
+                        </div>
+                    </div>
+                   <div class="bottom-part">
+                    <div class="notifications">
+                        <p>No notifications</p>
+                    </div>
+                   </div>
+                </div>
+                <div class="home_screen">
+                    <div class="glance">
+                        <div class="date">Wed, Nov 6</div>
+                        <div class="weather">
+                            <img class="wicon" src="./images/weather_icon.png"></img>
+                            <div class="degree">28<sup>o</sup>C</div>
+                        </div>
+                    </div>
+                    <div class="home_icons">
+                        <div class="icon"><i class="material-icons">call</i></div>
+                        <div class="icon"><i class="material-icons">message</i></div>
+                        <div class="icon"><i class="material-icons">camera</i></div>
+                        <div class="icon"><i class="fa-brands fa-google-play"></i></div>
+                        <div class="icon"><i class="fa-brands fa-whatsapp"></i></div>
+                    </div>
+                </div>
+                <div class="apps_screen">
+                    <div class="apps">
+                        <!-- <div class="icon-box">
+                            <div class="icon"><i class="material-icons">android</i></div>
+                            <div class="name">Android</div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="recent_bar"></div>
+        </div>
+    </main>
+</body>
+</html>

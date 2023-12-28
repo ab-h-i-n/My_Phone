@@ -1,0 +1,327 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    user-select: none;
+    scroll-behavior: smooth;
+
+}
+:root{
+    --PHONE-COLOR : rgb(13, 13, 13);
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-content: center;
+    background-color: rgb(74, 73, 93);
+    color: white;
+}
+main{
+    position: relative;
+    width: 450px;
+    height: 750px;
+    display: grid;
+    place-content: center;
+}
+.phone_body{
+    width: 360px;
+    height: 700px;
+    background-color: var(--PHONE-COLOR);
+    border-radius: 20px;
+    position: relative;
+}
+.btn{
+    position: absolute;
+    background-color:var(--PHONE-COLOR);
+    height: 100px;
+    width: 12px;
+    border-radius: 0 15px 15px 0;
+    right: 0;
+    top:130px;
+    transform: translate(12px, 0);
+    
+}
+.btn.power_btn{
+    height: 60px;
+    transform: translate(12px, 120px);
+}
+.camera{
+    background-color: rgb(67, 67, 67);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: absolute;
+    top:20px;
+    left:50%;
+    transform: translateX(-50%);
+    border: 5px solid black;
+    z-index: 1;
+}
+.camera::after{
+    content: "";
+    display: block;
+    background-color: rgb(0, 0, 0);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.screen{
+    position: relative;
+    background-color: black;
+    width: 93%;
+    height: 93%;
+    border-radius: 20px;
+    top:10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url('./images/wallpaper_2.jpg');
+    background-size: cover;
+    background-position: center;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+.screen::-webkit-scrollbar{
+    display: none;
+}
+.nav{
+    position: absolute;
+    padding: 1.6rem 1.6rem;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    z-index: 2;
+    cursor: pointer;
+}
+.nav .date{
+    opacity: 0%;
+    font-size: .8rem;
+    transition: .5s;
+}
+.right,
+.left{
+    display: flex;
+    gap:.5rem;
+    align-items: center;
+}
+.battery,
+.time{
+    font-size: .8rem;
+}
+.sim,
+.wifi{
+    filter: invert();
+    width: 16px;
+}
+.glance{
+    position: fixed;
+    margin-top: 30%;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+.weather{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+.wicon{
+    filter: invert();
+    width: 23px;
+}
+.home_screen{
+    scroll-snap-align: end;
+    width: 100%;
+    height: 100%;
+}
+.home_icons{
+    display: grid;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    bottom: 20px;
+    padding:.5rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 15px;
+}
+.fa-brands{
+    font-size: 22px;
+}
+.recent_bar{
+    position: absolute;
+    background-color: white;
+    width: 100px;
+    height: 5px;
+    border-radius: 20px;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.icon {
+    background-color: rgb(42, 40, 36);
+    border-radius: 50%;
+    width: 45px; 
+    height: 45px; 
+    display: grid;
+    place-content: center;
+    color: wheat;
+}
+
+.apps_screen {
+    scroll-snap-align: start;
+    opacity: 0%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding-bottom: 5rem; 
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.471);  
+}
+
+.apps {
+    margin-top: 4rem;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 0.5rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 5px;
+    row-gap: 15px;
+    grid-auto-rows: 65px; 
+
+}
+
+.icon-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:5px;
+}
+
+.name {
+    text-align: center;
+    width: 40px;
+    height: 20px;
+    font-size: .7rem;
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.apps::-webkit-scrollbar {
+    width: 6px;               
+}
+  
+.apps::-webkit-scrollbar-track {
+    background: rgb(27, 24, 20);        
+}
+  
+.apps::-webkit-scrollbar-thumb {
+    background-color:wheat;
+    border-radius: 15px;
+}
+.status_bar{
+    opacity: 0%;
+    z-index: 1;
+    width: 100%;
+    height: 20%;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    transition: 0.2s;
+}
+.status_bar .top-part{
+    background: linear-gradient(0deg, rgba(0,0,0,1) 35%, rgba(98,61,0,1) 100%);
+    width: 100%;
+    height: 40%;
+    padding-top: 1.5rem;
+}
+.top-part .buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
+    padding:1rem;
+    gap: 10px;
+}
+.buttons button{
+    display: flex;
+    color: white;
+    background-color: rgb(74, 63, 54);
+    align-items: center;
+    place-content: center;
+    gap: 10px;
+    padding: 1rem .5rem;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+button:hover{
+    background-color: wheat;
+    color: black;
+}
+.brightness-control{
+    width: 100%;
+    height: 30%;
+    padding: 1rem .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+.slider{
+    flex: 1;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 20px;
+    border-radius: 20px;
+    background-color:  rgb(32, 28, 25);
+}
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: wheat;
+    width: 20px; 
+    height: 20px; 
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 5;
+} 
+  
+.autob{
+    width: 35px;
+    height: 35px;
+    display: grid;
+    place-content: center;
+    background-color:  rgb(74, 63, 54);
+    border-radius: 50%;
+}
+.autob i{
+    font-size: 20px;
+}
+.status_bar .bottom-part{
+    z-index: 2;
+    position: absolute;
+    background-color: rgb(32, 28, 25);
+    width: 100%;
+    height: 61%;
+    border-radius: 20px 20px 0 0;
+}
+.notifications{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+}
