@@ -99,6 +99,7 @@ main{
     z-index: 2;
     cursor: pointer;
 }
+
 .nav .date{
     opacity: 0%;
     font-size: .8rem;
@@ -110,12 +111,17 @@ main{
     gap:.5rem;
     align-items: center;
 }
+.enabled_icons{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
 .battery,
 .time{
     font-size: .8rem;
 }
 .right i{
-    font-size: 18px;
+    font-size: 15px;
 }
 .glance{
     position: fixed;

@@ -27,8 +27,10 @@
                     <div class="date"></div>
                 </div>
                 <div class="right">
-                    <i class="material-icons">wifi</i>
-                    <i class="material-icons">signal_cellular_4_bar</i>
+                    <div class="enabled_icons">
+                        <!-- <i class="material-icons">wifi</i>
+                    <i class="material-icons">signal_cellular_4_bar</i> -->
+                    </div>
                     <div class="battery">76%</div>
                 </div>
             </div>
@@ -36,19 +38,19 @@
                 <div class="status_bar">
                     <div class="top-part">
                         <div class="buttons">
-                            <button>
+                            <button id="wifi">
                                 <i class="material-icons">wifi</i>
                                 <p class="text">Wifi</p>
                             </button>
-                            <button>
-                                <i class="material-icons">language</i>
+                            <button id="net">
+                                <i class="material-icons">signal_cellular_4_bar</i>
                                 <p class="text">Mobile data</p>
                             </button>
-                            <button>
+                            <button id="bluetooth">
                                 <i class="material-icons">bluetooth</i>
                                 <p class="text">Bluetooth</p>
                             </button>
-                            <button>
+                            <button id="flashlight">
                                 <i class="material-icons">flashlight_on</i>
                                 <p class="text">Flashlight</p>
                             </button>
