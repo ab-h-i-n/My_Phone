@@ -102,7 +102,7 @@ main{
 .nav .date{
     opacity: 0%;
     font-size: .8rem;
-    transition: .5s;
+    transition: .2s;
 }
 .right,
 .left{
@@ -280,26 +280,27 @@ button:hover{
     align-items: center;
     gap: 10px;
     position: relative;
+    opacity: 0%;
+    transition: .2s;
 }
-.slider{
+.custom-slider {
+    position: relative;
     flex: 1;
-    -webkit-appearance: none;
-    appearance: none;
-    height: 20px;
-    border-radius: 20px;
-    background-color:  rgb(32, 28, 25);
-}
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    background-color: wheat;
-    width: 20px; 
     height: 20px; 
-    border-radius: 20px;
+    background-color:  rgb(74, 63, 54);
+    border-radius: 20px; 
     cursor: pointer;
-    z-index: 5;
-} 
+  }
   
+  .slider-track {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color:wheat;
+    border-radius: 20px;
+}
 .autob{
     width: 35px;
     height: 35px;
