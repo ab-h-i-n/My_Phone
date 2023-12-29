@@ -356,15 +356,15 @@ button:hover{
     z-index: 10;
     position: absolute;
     background-color: var(--PHONE-COLOR);
-    width: 50px;
-    height: 30%;
+    width: 1px;
+    height: 1%;
     top: 18%;
-    right: 10px;
+    right: 28px;
     border-radius: 30px;
     padding: .5rem;
     opacity: 0;
-    transform : translateX(100px);
     transition: 0.2s;
+    transform: scale(.1);
 }
 .vertical-slider{
     background-color: rgba(245, 222, 179, 0.608);

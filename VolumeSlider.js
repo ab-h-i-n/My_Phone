@@ -66,12 +66,17 @@ function updateTrackHeight(y){
 
 function showVolumeControl() {
     volumeControl.style.opacity = '1';
-    volumeControl.style.transform = 'translateX(0)';
+    volumeControl.style.transform = 'scale(1)';
+    volumeControl.style.width = '50px';
+    volumeControl.style.height = '30%';
 }
 
 function hideVolumeControl() {
     volumeControl.style.opacity = '0';
-    volumeControl.style.transform = 'translateX(100px)';
+    volumeControl.style.transform = 'scale(.1)';
+    volumeControl.style.width = '1px';
+    volumeControl.style.height = '1%';
+
 }
 
 document.addEventListener("click", function (event) {
