@@ -394,6 +394,7 @@ button:hover{
 }
 
 .power-screen {
+    display: flex;
     position: absolute;
     z-index: 20;
     height: 93%;
@@ -404,7 +405,6 @@ button:hover{
     left: 50%;
     transform: translateX(-50%);
     top: 10px;
-    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -440,7 +440,7 @@ button:hover{
     place-content: center;
 }
 .power-icon.pc1{
-    background-color: red;
+    background-color: rgb(223, 34, 34);
     color: black;
 }
 
