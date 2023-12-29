@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const city = 'paravur';
     const units = 'metric'; // 'imperial' for Fahrenheit, 'metric' for Celsius
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
-    const tempText = document.querySelector('.degree');
+    const tempText = document.querySelectorAll('.degree');
 
     // Function to fetch weather data
     async function getCurrentWeather() {
@@ -16,7 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const temperature = data.main.temp;
             const temperatureInt = Math.round(temperature); // Round to the nearest integer
 
-            tempText.innerText = `${temperatureInt}°C`;
+            tempText.forEach((tempT)=>{
+                tempT.innerText = `${temperatureInt}°C`;
+            })
             console.log(`Temperature: ${temperatureInt}°C`);
         } catch (error) {
             console.error('Error fetching weather data:', error);

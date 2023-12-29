@@ -2,9 +2,6 @@ var slider = document.getElementById("slider");
 var track = document.getElementById("track");
 var isDragging = false;
 
-window.onload = () =>{
-    track.style.width = "50%";
-}
 
 slider.addEventListener("mousedown", function(event) {
   isDragging = true;

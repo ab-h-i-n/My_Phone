@@ -4,6 +4,8 @@ var timeText = document.querySelectorAll('.time-lock div');
 var swipeUpText = document.querySelector('.swipe-up-text');
 var lockGlance = document.querySelector('.lock-screen .glance');
 
+var lockScreenUnlocked = false;
+
 lockIcon.addEventListener('dblclick', () => {
   lockScreen.style.animation = 'none'; // Reset animation
   void lockScreen.offsetWidth; // Trigger reflow to restart the animation
@@ -14,6 +16,8 @@ lockIcon.addEventListener('dblclick', () => {
   timeText.forEach(element => {
     element.style.animation = 'SizeReduce 0.5s ease forwards';
   });
+
+  lockScreenUnlocked = true
   // Hide the lock screen after the animation
   setTimeout(() => {
     lockScreen.style.display = 'none';
@@ -35,4 +39,7 @@ powerBtn.addEventListener('click',()=>{
     timeText.forEach(element => {
       element.style.animation = 'none';
     });
+
+    lockScreenUnlocked = false;
 })
+

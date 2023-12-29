@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-
     function setTime() {
         const timeText = document.querySelector('.time');
         var time = getCurrentTime12hr();
@@ -27,11 +26,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function setDate() {
 
-        const dateText = document.querySelector('.date');
+        const dateText = document.querySelectorAll('.date');
         var currentDate = getFormattedDate();
         console.log(currentDate);
 
-        dateText.innerText = currentDate;
+        dateText.forEach((date)=>{
+            date.innerText = currentDate;
+        });
     }
 
     function getFormattedDate() {
@@ -57,5 +58,5 @@ document.addEventListener("DOMContentLoaded", () => {
         setTime();
         setDate();
     }, 1000);
-
+    
 });
