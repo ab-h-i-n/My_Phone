@@ -36,19 +36,25 @@ main{
 .btn{
     position: absolute;
     background-color:var(--PHONE-COLOR);
-    height: 100px;
+    height: 50px;
     width: 12px;
     border-radius: 0 15px 15px 0;
     right: 0;
     top:130px;
-    transform: translate(12px, 0);
     cursor: pointer;
+}
+.btn.volume_btn_1{
+    border-radius: 0 15px 0 0;
+    transform: translate(12px,0);
+}
+.btn.volume_btn_2{
+    border-radius: 0 0 15px 0;
+    transform: translate(12px,50px);
 }
 .btn:hover{
     background-color: rgb(33, 33, 33);
 }
 .btn.power_btn{
-    height: 60px;
     transform: translate(12px, 120px);
 }
 .camera{
@@ -346,32 +352,28 @@ button:hover{
 }
 
 .volume-control{
-    display: none;
     position: absolute;
     background-color: var(--PHONE-COLOR);
-    border-radius: 50px;
-    top: 18%;
-    right:20px;
-    height: 250px;
     width: 50px;
+    height: 30%;
+    top: 18%;
+    right: 30px;
+    border-radius: 30px;
     padding: .5rem;
 }
-
-.vcustom-slider {
-    position: relative;
+.vertical-slider{
+    background-color: rgba(245, 222, 179, 0.608);
+    width: 100%;
     height: 100%;
-    background-color: rgb(125, 107, 72);
-    border-radius: 20px;
+    border-radius: 50px;
+    position: relative;
     cursor: pointer;
 }
-
-.vslider-track {
+.slider-thumb{
+    background-color: wheat;
+    width: 100%;
+    height: 10%;
     position: absolute;
     bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px; /* Set an initial non-zero value */
-    background-color: wheat;
-    border-radius: 20px;
-    transition: height 0.2s; /* Specify the property for transition */
+    border-radius: 50px;
 }
