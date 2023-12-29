@@ -68,7 +68,7 @@ main{
     left:50%;
     transform: translateX(-50%);
     border: 5px solid black;
-    z-index: 1;
+    z-index: 100;
 }
 .camera::after{
     content: "";
@@ -391,4 +391,48 @@ button:hover{
     left: 50%;
     transform: translateX(-50%);
     cursor: pointer;
+}
+
+.power-screen {
+    position: absolute;
+    z-index: 20;
+    height: 93%;
+    width: 93%;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    filter: brightness(80%);
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.power-menu {
+    width: 70%;
+    height: 40%;
+    background-color: var(--PHONE-COLOR);
+    border-radius: 20px;
+    box-shadow: 10px 6px 10px black;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.power-icon {
+    --RADIUS: 90px;
+    width: var(--RADIUS);
+    height: var(--RADIUS);
+    background-color: rgb(70, 70, 70);
+    border-radius: 50%;
+    justify-self: center;
+    align-self: center;
+    display: grid;
+    place-content: center;
+}
+.power-icon.pc1{
+    background-color: red;
+    color: black;
+}
+.power-icon.pc3{
+    grid-column: span 2;
 }
