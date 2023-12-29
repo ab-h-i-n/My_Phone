@@ -25,4 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Call the function to get current weather
     getCurrentWeather();
+
+    setInterval(() => {
+        getCurrentWeather();
+    }, 1000);
 });

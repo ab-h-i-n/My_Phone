@@ -1,59 +1,61 @@
-addEventListener("DOMContentLoaded",()=>{
+document.addEventListener("DOMContentLoaded", () => {
 
+    function setTime() {
+        const timeText = document.querySelector('.time');
+        var time = getCurrentTime12hr();
+        console.log(time);
 
+        timeText.innerText = time;
+    }
 
-function setTime(){
-    const timeText = document.querySelector('.time');
-    var time = getCurrentTime12hr();
-    console.log(time);
+    function getCurrentTime12hr() {
+        var now = new Date();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
 
-    timeText.innerText = time;
-}
+        // Convert to 12-hour format
+        hours = hours % 12;
+        hours = hours ? hours : 12; // If hours is 0, set it to 12
 
-function getCurrentTime12hr() {
-    var now = new Date();
-    var hours = now.getHours();
-    var minutes = now.getMinutes();
+        // Add leading zero to single-digit minutes
+        minutes = minutes < 10 ? '0' + minutes : minutes;
 
-    // Convert to 12-hour format
-    hours = hours % 12;
-    hours = hours ? hours : 12; // If hours is 0, set it to 12
+        var time12hr = hours + ':' + minutes;
 
-    // Add leading zero to single-digit minutes
-    minutes = minutes < 10 ? '0' + minutes : minutes;
+        return time12hr;
+    }
 
-    var time12hr = hours + ':' + minutes;
+    function setDate() {
 
-    return time12hr;
-}
+        const dateText = document.querySelector('.date');
+        var currentDate = getFormattedDate();
+        console.log(currentDate);
 
-function setDate(){
+        dateText.innerText = currentDate;
+    }
 
-const dateText = document.querySelector('.date');
-var currentDate = getFormattedDate();
-console.log(currentDate);
+    function getFormattedDate() {
+        const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-dateText.innerText = currentDate;
+        var now = new Date();
+        var dayOfWeek = daysOfWeek[now.getDay()];
+        var month = months[now.getMonth()];
+        var day = now.getDate();
 
+        var formattedDate = `${dayOfWeek}, ${month} ${day}`;
 
-}
+        return formattedDate;
+    }
 
+    // Initial call to set the time and date
+    setDate();
+    setTime();
 
-function getFormattedDate() {
-    const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    // Update time every 1 second
+    setInterval(() => {
+        setTime();
+        setDate();
+    }, 1000);
 
-    var now = new Date();
-    var dayOfWeek = daysOfWeek[now.getDay()];
-    var month = months[now.getMonth()];
-    var day = now.getDate();
-
-    var formattedDate = `${dayOfWeek}, ${month} ${day}`;
-    
-    return formattedDate;
-}
-
-setDate();
-setTime();
-
-})
+});
