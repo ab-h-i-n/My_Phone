@@ -5,11 +5,16 @@ var isDragging = false;
 var volumeUp = document.querySelector('.volume_btn_1');
 var volumeDown = document.querySelector('.volume_btn_2');
 
+var volumeControl = document.querySelector('.volume-control');
+
+var volumeControlTimeout;
+
 window.onload = () =>{
     track.style.height = '50%';
 }
 
 volumeUp.addEventListener("click" , ()=>{
+    showVolumeControl();
     var currentPercentage = parseInt(track.style.height);
     var newPercentage = currentPercentage + 5;
     if(newPercentage > 100){
@@ -18,6 +23,7 @@ volumeUp.addEventListener("click" , ()=>{
     track.style.height = `${newPercentage}%`;
 });
 volumeDown.addEventListener("click" , ()=>{
+    showVolumeControl();
     var currentPercentage = parseInt(track.style.height);
     var newPercentage = currentPercentage - 5;
     if(newPercentage < 0){
@@ -58,3 +64,18 @@ function updateTrackHeight(y){
     track.style.height = invPercentage + '%';
 }
 
+function showVolumeControl() {
+    volumeControl.style.opacity = '1';
+    volumeControl.style.transform = 'translateX(0)';
+}
+
+function hideVolumeControl() {
+    volumeControl.style.opacity = '0';
+    volumeControl.style.transform = 'translateX(100px)';
+}
+
+document.addEventListener("click", function (event) {
+    if (!volumeControl.contains(event.target) && !volumeUp.contains(event.target) && !volumeDown.contains(event.target)) {
+        hideVolumeControl();
+    }
+});
