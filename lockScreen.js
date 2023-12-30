@@ -24,22 +24,3 @@ lockIcon.addEventListener('dblclick', () => {
   }, 1000); // 500 milliseconds (0.5 seconds)
 });
 
-
-var powerBtn = document.querySelector('.power_btn');
-
-powerBtn.addEventListener('click',()=>{
-    setTimeout(() => {
-        lockScreen.style.display = 'block';
-        lockScreen.style.animation = 'fadein 0.2s ease forwards';
-      }, 200);
-    lockScreen.style.animation = 'none';
-    lockIcon.style.animation = 'none'; 
-    swipeUpText.style.animation = 'none';
-    lockGlance.style.opacity = '100%';
-    timeText.forEach(element => {
-      element.style.animation = 'none';
-    });
-
-    lockScreenUnlocked = false;
-})
-

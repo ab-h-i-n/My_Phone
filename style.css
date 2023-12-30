@@ -410,7 +410,7 @@ main{
     top: 10px;
     align-items: center;
     justify-content: center;
-    transition: 0.2s;
+    transition: 0.5s;
 }
 .power-menu {
     padding: .5rem;
@@ -421,6 +421,7 @@ main{
     box-shadow: 10px 6px 10px black;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    transition: 0.5s;
 }
 .box{
     justify-self: center;
