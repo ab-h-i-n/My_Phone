@@ -24,3 +24,5 @@ lockIcon.addEventListener('dblclick', () => {
   }, 1000); // 500 milliseconds (0.5 seconds)
 });
 
+
+export {lockScreenUnlocked};
